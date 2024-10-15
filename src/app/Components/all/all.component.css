@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.task-container, h1 {
+  display: flex;
+  justify-content: center;
+  margin: 0; /* Reset margin */
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.one-task {
+  display: flex;
+  margin-right: 2%;
+  margin-left: 5%;
+  font-size: 1.5rem; /* Use rem for scalability */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column; /* Align tasks vertically */
+  padding: 10px;
+  overflow: hidden; /* Prevent overflow from the task container */
+}
+
+.task-list {
+  overflow-y: auto; /* Enables vertical scrolling if the content overflows */
+  max-height: calc(90vh - 200px); /* Adjust max height considering other elements */
+  padding: 10px;
+  list-style-type: none; /* Remove default list bullets */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Add additional styling for scrollbar if needed */
+.task-list::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.task-list::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Background color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Optional styling for task items */
+.task-item {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  border-bottom: 1px solid #2f343a;
+}
+
+.add-separator {
+  border: 1px solid #2f343a;
+}
+
+/* Hide the default checkbox appearance */
+.task-completed {
+  display: none;
+}
+
+/* Style the container to be a clickable area */
+.checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Style the custom checkbox */
+.checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Style the checkmark when the checkbox is checked */
+.task-completed:checked + .checkmark {
+  background-color: #4caf54;
+  border-color: #4caf50;
+}
+
+/* Style the checkmark when the checkbox is checked */
+.task-completed:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Optionally, add hover effects */
+.checkmark:hover {
+  border-color: #999;
+}
+
+
+.details-button {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 3px 10px;
+  color: #ffffff;
+  margin-left: 5%; /* Adjusted for responsiveness */
+  border: none;
+  border-bottom: 1px solid dodgerblue;
+}
+
+.details-button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.divider {
+  height: 2px; /* Height of the line */
+  background-color: #ccc; /* Color of the line */
+  margin-top: 5px; /* Space above the line */
+  width: 100%; /* Make the line take the full width of the container */
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.5rem; /* Smaller header on mobile */
+  }
+
+  .details-button {
+      font-size: 0.9rem; /* Adjust font size */
+      padding: 2px 8px; /* Adjust padding */
+  }
+}

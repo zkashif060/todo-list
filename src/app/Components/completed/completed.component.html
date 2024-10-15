@@ -1,0 +1,29 @@
+<ul class="task-list">
+  <li *ngFor="let task of completedTasks" class="task-item">
+    <div class="one-task">
+      <span class="task-name" *ngIf="taskService.editTaskId !== task.id">
+        <label class="checkbox-container">
+          <input type="checkbox" name="completed" class="task-completed" [(ngModel)]="task.completed" (click)="toggleCompletion(task)">
+          <span class="checkmark"></span>
+        </label>
+        <span [ngClass]="{ 'completed-task': task.completed }">
+          {{ task.name }}
+        </span>
+      </span>
+      <div class="action-buttons">
+        <p-button (click)="removeTask(task.id)" icon="pi pi-trash" severity="danger">
+        </p-button>
+      </div>
+    </div>
+    <button 
+      class="details-button" 
+      (click)="taskService.toggleDetails(task.id)">
+      {{ taskService.selectedTaskId === task.id && taskService.showDetails ? '-Hide Task Details' : '-View Task Details' }}
+    </button>
+    <div 
+      class="status" 
+      *ngIf="taskService.isDetailsVisible(task.id)">
+      <app-todo-details [task]="task"></app-todo-details>
+    </div>
+  </li>
+</ul>

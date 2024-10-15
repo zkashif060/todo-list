@@ -1,0 +1,111 @@
+body {
+  display: flex;
+  justify-content: center; /* Center the modal horizontally */
+  align-items: center; /* Center the modal vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  background-color: #f7f7f7; /* Optional background color */
+}
+
+.modal-center {
+  position: fixed; /* Position it fixed to the viewport */
+  top: 50%; /* Start from the top */
+  left: 50%; /* Start from the left */
+  transform: translate(-50%, -50%); /* Center the modal using transform */
+  display: flex; /* Use flexbox to center */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1000; /* Ensure it appears above other content */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  visibility: visible; /* Make sure it's visible */
+  width: 100%; /* Full width to ensure covering the viewport */
+  height: 100%; /* Full height to ensure covering the viewport */
+}
+
+.modal {
+  position: fixed; /* Fix position to the viewport */
+  top: 50%; /* Start from the top */
+  left: 50%; /* Start from the left */
+  transform: translate(-50%, -50%); /* Center the modal */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px; /* Maximum width for the modal */
+  width: 90%; /* Responsive width */
+  max-height: 450px; /* Set a minimum height for the modal */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+  z-index: 1001; /* Ensure modal is above the backdrop */
+}
+
+h2 {
+  margin-bottom: 20px; /* Space below the title */
+  font-family: 'Arial', sans-serif; /* Font style */
+  color: #333; /* Darker text color */
+  font-size: 24px; /* Larger font size */
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 100px; /* Set a minimum height for the textarea */
+}
+
+input, textarea, button {
+  margin-bottom: 10px; /* Space between inputs */
+  padding: 10px; /* Inner spacing */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Smooth transition */
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove outline */
+}
+
+/* Add Task Button */
+.add-task-button {
+  padding: 10px 20px; /* Increased padding for better touch target */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  background-color: #28A745; /* Bright green */
+  color: #FFFFFF; /* White text color */
+  border: none; /* Remove border */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.add-task-button:hover {
+  background-color: #218838; /* Darker green on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Cancel Button */
+.cancel-button {
+  padding: 10px 20px; /* Increased padding for better touch target */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  background-color: #DC3545; /* Bright red */
+  color: #FFFFFF; /* White text color */
+  border: none; /* Remove border */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.cancel-button:hover {
+  background-color: #C82333; /* Darker red on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+.ngb-dp {
+  margin-top: 10px; /* Space above the calendar */
+}
+
+.ngb-dp .ngb-dp-day:hover {
+  background-color: #e9ecef; /* Highlight on hover */
+}

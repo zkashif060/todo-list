@@ -1,0 +1,19 @@
+<div class="modal-center">
+    <p-card label="Add Task">
+        <div>
+            <input pInputText type="text" [(ngModel)]="title" placeholder="Task Title" required />
+        </div>
+        <div>
+            <textarea pInputText [(ngModel)]="description" placeholder="Task Description"></textarea>
+        </div>
+        <div>
+            <p-calendar [(ngModel)]="deadline"/>
+        </div>
+        <div>
+            <p-button (click)="addTask()">Add Task</p-button>
+        </div>
+        <div>
+            <p-button (click)="closeModal()">Cancel</p-button>
+        </div>
+    </p-card>
+</div>

@@ -1,0 +1,32 @@
+<button (click)="getAllUsers()">Get Users From API</button>
+<div class="card">
+    <p-toast styleClass="custom-toast"></p-toast>
+
+<p-fileUpload
+    name="myfile[]"
+    url="https://www.primefaces.org/cdn/api/upload.php"
+    [multiple]="true"
+    accept="image/*"
+    maxFileSize="1000000"
+    (onUpload)="onTemplateUpload()"
+    (onSelect)="onSelectedFiles($event)"
+    chooseLabel="Select Files"
+    uploadLabel="Upload"
+    cancelLabel="Cancel"
+    styleClass="custom-file-upload"
+    mode="advanced"
+></p-fileUpload>
+
+</div>
+
+<ul>
+    <li *ngFor="let user of userList">
+        ID: {{ user.id }}<br>
+        Name: {{ user.name }}<br>
+        Username: {{ user.username }}<br>
+        Phone No: {{ user.phone }}<br>
+        Email: {{ user.email }}<br>
+        Company Name: {{ user.company.name }}<br>
+        Website: {{ user.website }}<br>
+    </li>
+</ul>

@@ -1,0 +1,30 @@
+<div class="created-date">
+    <div *ngIf="task?.createdAt; then createdTemplate"></div>
+      <ng-template #createdTemplate>
+        Created On: {{ task?.createdAt }}
+      </ng-template>
+  </div>
+  <div class="deadline-date">
+    <div *ngIf="task?.deadlineDate; then deadlineTemplate"></div>
+      <ng-template #deadlineTemplate>
+        Deadline: {{ task?.deadlineDate }}
+      </ng-template>
+  </div>
+  <div class="completed-date">
+    <div *ngIf="task?.completed; then completedTemplate"></div>
+      <ng-template #completedTemplate>
+        Completed On: {{ task?.completedAt }}
+      </ng-template>
+  </div>
+  <div class="status">
+    <div *ngIf="task?.tellStatus && task?.deadlineDate && task?.completed; then statusTemplate"></div>
+      <ng-template #statusTemplate>
+        {{ task?.tellStatus }}
+      </ng-template>
+  </div>
+  <div class="description">
+    <div *ngIf="task?.description then descriptionTemplate"></div>
+      <ng-template #descriptionTemplate>
+        Description: {{ task?.description}}
+      </ng-template>
+  </div>
