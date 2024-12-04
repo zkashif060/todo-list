@@ -8,7 +8,7 @@
     [multiple]="true"
     accept="image/*"
     maxFileSize="1000000"
-    (onUpload)="onTemplateUpload()"
+    (onUpload)="onUpload($event)"
     (onSelect)="onSelectedFiles($event)"
     chooseLabel="Select Files"
     uploadLabel="Upload"

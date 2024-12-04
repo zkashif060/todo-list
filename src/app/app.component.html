@@ -14,7 +14,7 @@
         />
       </div>
     
-      <p-menubar [model]="items"></p-menubar>
+      <p-menubar [model]="items" (onFocus)="activeMenu($event)" ></p-menubar>
       <router-outlet></router-outlet>
     </p-card>
   </div>

@@ -19,11 +19,14 @@ import { MenuItem } from 'primeng/api';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { RippleModule } from 'primeng/ripple';
 import { DialogModule } from 'primeng/dialog';
+import { CloudinaryModule } from '@cloudinary/ng';
+import {Cloudinary, CloudinaryImage } from '@cloudinary/url-gen';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    CloudinaryModule,
     RouterOutlet, 
     CommonModule, 
     FormsModule, 
@@ -47,7 +50,7 @@ import { DialogModule } from 'primeng/dialog';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title = 'To Do List App';
   newTaskName = '';
   newTaskDeadline = '';
@@ -70,6 +73,33 @@ export class AppComponent{
       routerLink: '/getApi',
     }
   ];
+
+  activeMenu(event: any): void {
+    let node: HTMLElement;
+
+    // Determine the clicked element
+    if (event.target.tagName === 'A') {
+      node = event.target;
+    } else {
+      node = event.target.closest('a'); // Handles nested elements inside the link
+    }
+
+    // Remove active class from all menu items
+    const menuItems = document.getElementsByClassName('ui-menuitem-link');
+    for (let i = 0; i < menuItems.length; i++) {
+      menuItems[i].classList.remove('active');
+    }
+
+    // Add active class to the clicked menu item
+    if (node) {
+      node.classList.add('active');
+    }
+  }
+
+
+  ngOnInit(): void {
+      
+  }
 
   
   constructor(private taskService: TaskService) {}

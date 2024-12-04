@@ -41,8 +41,26 @@ export class GetApiComponent {
     this.messageService.add({ severity: 'info', summary: 'Files Selected', detail: `${files.length} files selected.` });
 }
 
-onTemplateUpload() {
-    this.messageService.add({ severity: 'success', summary: 'Upload Complete', detail: 'Files have been uploaded successfully!' });
+onUpload(event: any) {
+  const file = event.files[0]; // Get the first file
+  const fileData = {
+      name: file.name,
+      size: file.size,
+      type: file.type,
+      // Optionally, include other properties
+  };
+
+  // Send only the file metadata to JSON Server
+  this.http.post('http://localhost:3000/pictures', fileData).subscribe(
+      response => {
+          console.log('File uploaded successfully', response);
+      },
+      error => {
+          console.error('Upload failed', error);
+      }
+  );
 }
+
+
 
 }

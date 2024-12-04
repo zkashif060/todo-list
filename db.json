@@ -1,0 +1,22 @@
+{
+  "pictures": [
+    {
+      "id": "db34"
+    },
+    {
+      "id": "2d13"
+    },
+    {
+      "id": "d30a",
+      "name": "hello-dribbble-large.png",
+      "size": 29166,
+      "type": "image/png"
+    },
+    {
+      "id": "fc07",
+      "name": "1694672059911.png",
+      "size": 692404,
+      "type": "image/png"
+    }
+  ]
+}

@@ -27,8 +27,10 @@
   margin-top: 5vh;
   overflow: hidden; 
 }
-
-
-
+.ui-menuitem-link.active {
+  font-weight: bold;
+  color: #febd58; /* Your desired active state color */
+  background-color: #f3f3f3; /* Optional: highlight background */
+}
 
 
