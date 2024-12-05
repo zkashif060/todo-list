@@ -59,20 +59,29 @@ export class AppComponent implements OnInit{
     {
       label: 'All',
       routerLink: '/all',
+      routerLinkActiveOptions: { exact: true },
+      routerLinkActive: 'hover-effect',
     },
     {
       label: 'Active',
-      routerLink: '/active'
+      routerLink: '/active',
+      routerLinkActiveOptions: { exact: true },
+      routerLinkActive: 'hover-effect',
     },
     {
       label: 'Completed',
       routerLink: '/completed',
+      routerLinkActiveOptions: { exact: true },
+      routerLinkActive: 'hover-effect',
     },
     {
       label: 'Image Upload',
       routerLink: '/getApi',
+      routerLinkActiveOptions: { exact: true },
+      routerLinkActive: 'hover-effect',
     }
   ];
+  
 
   activeMenu(event: any): void {
     let node: HTMLElement;

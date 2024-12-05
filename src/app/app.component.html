@@ -14,7 +14,17 @@
         />
       </div>
     
-      <p-menubar [model]="items" (onFocus)="activeMenu($event)" ></p-menubar>
+      <p-menubar [model]="items">
+        <ng-template let-item pTemplate="item">
+          <a [routerLink]="item.routerLink"
+             [routerLinkActive]="item.routerLinkActive"
+             [routerLinkActiveOptions]="item.routerLinkActiveOptions"
+             class="menu-link">
+            {{ item.label }}
+          </a>
+        </ng-template>
+      </p-menubar>
+      
       <router-outlet></router-outlet>
     </p-card>
   </div>

@@ -33,4 +33,57 @@
   background-color: #f3f3f3; /* Optional: highlight background */
 }
 
+.hover-effect {
+  background-color: transparent; /* No background color */
+}
+
+/* General Menubar Styling */
+.p-menubar {
+  background-color: #0d1b2a; /* Dark blue background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  border-radius: 12px; /* Rounded corners */
+  padding: 12px 20px; /* Increased padding for a spacious feel */
+}
+
+/* Menu Item Link Styling */
+.menu-link {
+  display: inline-block;
+  margin: 0 16px; /* Add spacing between menu items */
+  padding: 12px 18px;
+  text-decoration: none; /* Remove underline */
+  color: #f0f4f8; /* Light text color */
+  font-weight: 500; /* Medium weight for better readability */
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+  border-radius: 8px; /* Rounded corners for hover effect */
+  font-size: 16px; /* Slightly larger text for better readability */
+}
+
+/* Hover Effect */
+.menu-link:hover {
+  background-color: #1b263b; /* Slightly lighter blue for hover */
+  color: #a8d0e6; /* Attractive light blue text on hover */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Active Link Styling */
+.menu-link.hover-effect {
+  background-color: #1b263b; /* Match hover effect color */
+  color: #a8d0e6; /* Light blue text for active state */
+  font-weight: bold; /* Bold to emphasize active item */
+  border-bottom: 3px solid #415a77; /* Accent line for active item */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .p-menubar {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .menu-link {
+    display: block;
+    text-align: center; /* Center-align links */
+    margin: 10px 0; /* Adjust spacing for vertical layout */
+  }
+}
 
